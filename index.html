@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Casco Fiestero Control Hub ⚡</title>
+    <!-- Iconos modernos por CDN para que no descargues nada -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="party-container">
+        <!-- BANNER DE ESTADO PRINCIPAL -->
+        <header id="statusBanner" class="banner-normal">
+            <h1 id="txtEstado">🕺 ¡Casco Fiestero Activo! Esperando Acción...</h1>
+        </header>
+
+        <!-- PANEL DE CONTROL / BOTÓN WEB -->
+        <section class="control-panel">
+            <button id="btnRemoto" class="btn-off">
+                <i class="fa-solid fa-beer-mug-empty"></i> ENCENDER BOMBEO
+            </button>
+        </section>
+
+        <!-- GRID DE TARJETAS NEÓN -->
+        <main class="grid">
+
+            <!-- Tarjeta 1: Alcohol (MQ-3) -->
+            <div class="card card-alcohol">
+                <div class="card-icon"><i class="fa-solid fa-flask-vial"></i></div>
+                <div class="card-info">
+                    <h3>Control Alcoholemia</h3>
+                    <p class="value"><span id="valAlcohol">0</span> <small>pts</small></p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="barAlcohol" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Cronómetro de Toma Actual -->
+            <div class="card card-timer">
+                <div class="card-icon"><i class="fa-solid fa-stopwatch"></i></div>
+                <div class="card-info">
+                    <h3>Tiempo Tomando</h3>
+                    <p class="value" id="valTiempoActual">0.0 <small>seg</small></p>
+                    <small id="txtRecord" class="neon-text-cyan">🏆 Récord: 0.0s</small>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Sistema de Rachas -->
+            <div class="card card-racha">
+                <div class="card-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                <div class="card-info">
+                    <h3>Racha Fiestera</h3>
+                    <p class="value" id="valRacha">0 <small>🔥</small></p>
+                    <small id="txtRachaMensaje">¡Mantén el ritmo para subir!</small>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4: Consumo Acumulado -->
+            <div class="card card-consumo">
+                <div class="card-icon"><i class="fa-solid fa-beer-mug-empty"></i></div>
+                <div class="card-info">
+                    <h3>Bebida Ingerida</h3>
+                    <p class="value" id="valConsumo">0 ml</p>
+                    <small id="txtLimite" class="neon-text-yellow">Límite de Fiesta: 500 ml</small>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
